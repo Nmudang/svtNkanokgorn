@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}
+Member page
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+
+        	{{ form.hidden_tag() }}
+            
+		<p>{{ form.imgs.label() }}
+		   </br>{{ form.imgs }}</p>
+
+		   <p>{{ form.cap.label() }}
+		   </br>{{ form.cap }}</p>
+
+
+        {{ form.submit }}
+		
+	</form>
+		
+
+</div>
+
+{% endblock %}

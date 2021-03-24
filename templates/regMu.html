@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}
+Member page
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+
+        	{{ form.hidden_tag() }}
+            
+		<p>{{ form.name.label() }}
+		   </br>{{ form.name }}</p>
+
+		   <p>{{ form.add.label() }}
+		   </br>{{ form.add }}</p>
+
+
+		   <p>{{ form.cate.label() }}
+		   </br>{{ form.cate }}</p>
+
+
+
+        {{ form.submit }}
+		
+	</form>
+	{% for mu in musics %}
+
+
+{% endblock %}

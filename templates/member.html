@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}
+Member page
+{% endblock %}
+
+{% block content %}
+
+{% for member in members %}
+<div style="text-align: center">
+	<p><br><img width="300" src=" {{url_for('send_image', filename=member.mainimg)}}"></p>
+	<p>stage_name : {{ member.stage_name }}</p>
+	<p>first_name : {{ member.first_name }}</p>
+	<p>last_name : {{ member.last_name }}</p>
+	<p>height : {{ member.height }}</p>
+	<p>weight : {{ member.weight }}</p>
+	<p>birth : {{ member.birth }}</p>
+	<p>position : {{ member.position }}</p>
+	<p> -------------------------------------------------------------------------------------------------</p>
+</div>
+{% endfor %}
+
+
+{% endblock %}

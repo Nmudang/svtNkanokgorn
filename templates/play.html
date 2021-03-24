@@ -1,0 +1,33 @@
+<figure id="video_player">
+	<video controls poster="nambia1.jpg">
+		<source src="C:/Users/User/Downloads/flask/svt/static/music/wonwoo-hit.mp4" type="video/mp4">
+		<source src="C:/Users/User/Downloads/flask/svt/static/music/wonwoo-hit.webm" type="video/webm">
+	</video>
+	<figcaption>
+		<a href="C:/Users/User/Downloads/flask/svt/static/music/wonwoo-hit.mp4">wonwoo-hit</a>
+		<a href="C:/Users/User/Downloads/flask/svt/static/music/wonwoo-fear.mp4">wonwoo-fear</a>
+	</figcaption>
+</figure>
+
+
+
+<script type="text/javascript">
+	var video_player = document.getElementById("video_player"),
+links = video_player.getElementsByTagName('a');
+for (var i=0; i<links.length; i++) {
+	links[i].onclick = handler;
+}
+	function handler(e) {
+	e.preventDefault();
+	videotarget = this.getAttribute("href");
+	filename = videotarget.substr(0, videotarget.lastIndexOf('.')) || videotarget;
+	video = document.querySelector("#video_player video");
+	video.removeAttribute("controls");
+	video.removeAttribute("poster");
+	source = document.querySelectorAll("#video_player video source");
+	source[0].src = filename + ".mp4";
+	source[1].src = filename + ".webm";
+	video.load();
+	video.play();    
+}
+</script>

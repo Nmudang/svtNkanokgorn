@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}
+Member page
+{% endblock %}
+
+{% block content %}
+
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+
+        	{{ form.hidden_tag() }}
+            
+		<p>{{ form.username.label() }}
+		   </br>{{ form.username }}</p>
+
+		   <p>{{ form.email_address.label() }}
+		   </br>{{ form.email_address }}</p>
+
+
+
+		   <p>{{ form.password1.label() }}
+		   </br>{{ form.password1 }}</p>
+
+		   <p>{{ form.password2.label() }}
+		   </br>{{ form.password2 }}</p>
+
+		   <p>{{ form.img.label() }}
+		   </br>{{ form.img }}</p>
+
+
+        {{ form.submit }}
+		
+	</form>
+		
+
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+<style>
+  .modal-content {
+    background-color: #212121
+  }
+</style>
+
+<div class="modal fade" id="Modal-Showimg-{{ img.id }}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-body">
+         <img width="300" src=" {{url_for('send_image', filename=img.name)}}">
+         <br>
+         {{ cap.text }}
+      </div>
+
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

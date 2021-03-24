@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% block title %}
+Member page
+{% endblock %}
+
+{% block content %}
+
+<body class="text-center">
+    <div class="container">
+        <form method="POST" enctype="multipart/form-data">
+
+        	{{ form.hidden_tag() }}
+            
+		<p>{{ form.stage_name.label() }}
+		   </br>{{ form.stage_name }}</p>
+
+		   <p>{{ form.first_name.label() }}
+		   </br>{{ form.first_name }}</p>
+
+
+		   <p>{{ form.last_name.label() }}
+		   </br>{{ form.last_name }}</p>
+
+		   <p>{{ form.height.label() }}
+		   </br>{{ form.height }}</p>
+
+		   <p>{{ form.weight.label() }}
+		   </br>{{ form.weight }}</p>
+
+		   <p>{{ form.birth.label() }}
+		   </br>{{ form.birth }}</p>
+
+		   <p>{{ form.position.label() }}
+		   </br>{{ form.position }}</p>
+
+		   <p>{{ form.img.label() }}
+		   </br>{{ form.img }}</p>
+
+
+        {{ form.submit }}
+		
+	</form>
+		
+
+</div>
+
+{% endblock %}
