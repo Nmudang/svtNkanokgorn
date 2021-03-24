@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+Member page
+{% endblock %}
+
+{% block content %}
+{% for cap in caps %}
+<div>
+	<form method="POST">
+{% for img in imgs %}
+
+{% if img.cap == cap.id %}
+ {% include 'includes/myimg_modal.html' %}
+
+<button type="button" class="btn btn-outline-danger"  data-toggle="modal" data-target="#Modal-Showimg-{{ img.id }}">
+                             <img  class="cropped1" width="300" src=" {{url_for('send_image', filename=img.name)}}">
+                       </button>
+
+{% endif %}
+
+{% endfor %}
+<br>
+{{ cap.text }}
+<input id="submit" name="delete" type="hidden" value="{{ cap.id }}">
+          {{ form.delete(class="btn btn-outline-success btn-block") }}
+        </form>
+</div>
+{% endfor %}
+
+{% endblock %}
